@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thân mời bạn Khánh Hân chung vui cùng My & Khuê</title>
+    <link
+      rel="preload"
+      as="image"
+      href="https://github.com/harmony3k/mykhue-invite/blob/main/images/background%20chuan.webp?raw=true"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Mali&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Meta Tags... -->
+    <title>Khuê & My - Happy Wedding</title>
+    <meta name="title" content="Khuê & My thân mời bạn Khánh Hân chung vui" />
+    <meta
+      name="description"
+      content="Sau hơn 3000 ngày phiêu lưu cùng nhau, bọn mình quyết định khởi đầu một hành trình mới - gia đình nhỏ mà có Võ"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://khuemyforever.site/" />
+    <meta
+      property="og:title"
+      content="Khuê & My thân mời bạn Khánh Hân chung vui"
+    />
+    <meta
+      property="og:description"
+      content="Sau hơn 3000 ngày phiêu lưu cùng nhau, bọn mình quyết định khởi đầu một hành trình mới - gia đình nhỏ mà có Võ"
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/harmony3k/mykhue-invite/blob/main/images/thumbnail.jpg?raw=true"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://khuemyforever.site/" />
+    <meta property="twitter:title" content="Khuê & My - Happy Wedding" />
+    <meta
+      property="twitter:description"
+      content="Sau hơn 3000 ngày phiêu lưu cùng nhau, bọn mình quyết định khởi đầu một hành trình mới - gia đình nhỏ mà có Võ"
+    />
+    <meta
+      property="twitter:image"
+      content="https://github.com/harmony3k/mykhue-invite/blob/main/images/thumbnail.jpg?raw=true"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #333;
+        /* BƯỚC 1: Tạm thời ẩn thanh cuộn dọc khi tải trang */
+      }
+      .content {
+        margin: -30px auto 0;
+        background-image: url("https://github.com/harmony3k/mykhue-invite/blob/main/images/background%20chuan.webp?raw=true");
+        border-radius: 12px;
+        width: 100%;
+        max-width: 440px;
+        overflow: visible;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        animation: fadeIn 1.5s ease-in-out forwards;
+      }
+
+      .body-content p {
+        padding: 0 30px 0 30px;
+        margin-top: 0;
+        margin-bottom: 1.2em;
+        font-family: "Mali";
+        font-size: 0.8rem;
+        color: #133690;
+        line-height: 1.35rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .body-content p:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+      .body-content p:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+      .body-content p:nth-child(4) {
+        transition-delay: 0.3s;
+      }
+      .body-content p:nth-child(5) {
+        transition-delay: 0.4s;
+      }
+      .body-content p:nth-child(6) {
+        transition-delay: 0.5s;
+      }
+
+      .body-content p.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .footer-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: -20px;
+        margin-left: auto;
+        margin-right: auto;
+
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .footer-img.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .content-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        margin: 0;
+      }
+      .wish-card {
+        background-color: #edeae5;
+        padding: 5vh 4vh;
+        width: 90%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
+      /* CSS cho tiêu đề "Lời chúc phúc" */
+      .wish-card h1 {
+        font-family: "Meow Script", cursive; /* Sử dụng font Meow Script */
+        color: #e5627f;
+        font-size: 48px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+
+      /* CSS chung cho các nhóm input */
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      /* CSS cho nhóm input "Gửi từ" nằm trên cùng một dòng */
+      .form-group-inline {
+        display: flex; /* Sử dụng Flexbox để sắp xếp */
+        align-items: baseline; /* Căn chỉnh theo đường cơ sở của chữ */
+      }
+
+      /* CSS cho nhãn (label) */
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-size: 16px;
+        font-family: "Mali", cursive; /* Sử dụng font Mali */
+      }
+
+      /* CSS riêng cho nhãn "Gửi từ" khi nằm trên cùng dòng */
+      .form-group-inline label {
+        margin-bottom: 0; /* Bỏ margin dưới */
+        margin-right: 10px; /* Tạo khoảng cách với ô input */
+        flex-shrink: 0; /* Không cho phép nhãn bị co lại */
+      }
+
+      /* CSS cho ô nhập liệu 1 dòng */
+      .form-group .single-line-input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid hsl(0, 0%, 20%); /* Chỉ giữ lại đường gạch chân */
+        background-color: transparent;
+        font-size: 16px;
+        font-family: Mali;
+        color: #e5627f;
+        padding: 2px 0;
+        flex-grow: 1; /* Cho phép input chiếm hết không gian còn lại */
+      }
+
+      /* Loại bỏ đường viền khi focus vào input */
+      .form-group .single-line-input:focus {
+        outline: none;
+      }
+
+      /* CSS cho ô nhập liệu nhiều dòng (textarea) - ĐÃ ĐIỀU CHỈNH */
+      .form-group .multi-line-textarea {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        padding-left: 5px;
+        font-size: 16px;
+        font-family: Mali;
+        color: #e5627f;
+
+        /* Điều chỉnh khoảng cách dòng */
+        line-height: 24px; /* GIẢM: Chiều cao cho mỗi dòng văn bản */
+        height: 120px; /* GIẢM: Chiều cao tổng (24px * 5 dòng) */
+
+        resize: none;
+        padding: 0;
+        margin: 0;
+
+        /* Điều chỉnh các đường kẻ để khớp với line-height mới */
+        background-image: repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 23px,
+          /* Khoảng trống */ #333 23px,
+          /* Bắt đầu đường kẻ */ #333 24px /* Kết thúc đường kẻ */
+        );
+        background-size: 100% 24px; /* GIẢM: Khoảng cách giữa các đường kẻ */
+      }
+
+      /* Loại bỏ đường viền khi focus vào textarea */
+      .form-group .multi-line-textarea:focus {
+        outline: none;
+      }
+
+      /* -- PHẦN MỚI: CSS cho nút Gửi -- */
+      .submit-container {
+        text-align: center; /* Căn giữa nút */
+        margin-top: 30px;
+      }
+
+      .submit-btn {
+        font-family: "Mali", cursive; /* Dùng font Mali */
+        font-size: 16px;
+        color: #fff;
+        background-color: #e5627f; /* Màu hồng giống tiêu đề */
+        border: none;
+        padding: 10px 25px;
+        border-radius: 8px; /* Bo góc nhẹ */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Hiệu ứng khi di chuột */
+      }
+
+      .submit-btn:hover {
+        background-color: #d4516e; /* Màu đậm hơn khi di chuột qua */
+      }
+      @media (max-width: 420px) {
+        .body-content p {
+          padding: 0 18px;
+          font-size: 1.15rem;
+          line-height: 1.65rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <img
+        class="hero-img"
+        src="https://raw.githubusercontent.com/harmony3k/mykhue-invite-demo/refs/heads/main/images/Hero%20Banner.webp"
+        alt=""
+      />
+      <div class="body-content">
+        <p>Gửi bạn: Cà Rem iu dấu</p>
+        <p>
+          Vậy là cũng hơn 12 năm rồi ha. Tụi mình lớn lên theo những cách rất
+          riêng, đi hết nửa vòng trái đất so với hồi đèo nhau vòng vòng mấy con
+          đường quen. Dù ở đâu, tao vẫn tin tụi mình luôn nhớ nhau theo kiểu im
+          lặng nhưng chân thành, chỉ mong đối phương luôn bình an và khỏe mạnh.
+        </p>
+        <p>
+          Nên đây là tin chính: Cô bạn năm 14 tuổi của mày đã chính thức chốt
+          đơn mối tình đầu. Anh sẽ lên xe bông vào
+          <strong>ngày 29 tháng 11 năm 2025.</strong>
+        </p>
+        <p>
+          Ngày đó chắc không gặp nhau được rồi, nên rất là hy vọng nhận được lời
+          chúc từ mày. Cứ thoải mái múa bút bên dưới nhá, cà khịa hoặc dọa
+          (Khuê) đều được 😎.
+        </p>
+        <p>
+          Một lời chúc từ mày sẽ làm ngày ấy của tao thêm trọn vẹn lắm lắm lắm.
+        </p>
+        <p>Yêu thương thiệt nhiều đến bạn!<br />Từ cô bạn Vẹt nhí nhảnh 💖</p>
+      </div>
+      <img
+        class="footer-img"
+        src="https://github.com/harmony3k/mykhue-invite/blob/main/images/polaroid.webp?raw=true"
+        alt=""
+      />
+      <!-- Bắt đầu Form -->
+      <div class="content-form">
+        <div class="wish-card">
+          <form>
+            <h1>Lời chúc phúc</h1>
+            <div class="form-group form-group-inline">
+              <label for="sender">Gửi từ:</label>
+              <input
+                type="text"
+                id="sender"
+                name="sender"
+                class="single-line-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Đọc cho kỹ nhớ:</label>
+              <textarea
+                id="message"
+                name="message"
+                class="multi-line-textarea"
+              ></textarea>
+            </div>
+
+            <!-- THÊM MỚI: Nút Gửi -->
+            <div class="submit-container">
+              <button type="submit" class="submit-btn">Gửi lời chúc</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Kết thúc Form -->
+    </div>
+
+    <!-- SCRIPT CHO HIỆU ỨNG SCROLL -->
+    <script>
+      window.onload = function () {
+        // Bật lại cuộn sau khi mọi thứ load xong
+        document.body.style.overflowY = "auto";
+
+        // Hiệu ứng fade lên cho text & footer
+        const elements = document.querySelectorAll(
+          ".body-content p, .footer-img"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+      };
+    </script>
+  </body>
+</html>
