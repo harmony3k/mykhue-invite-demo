@@ -162,13 +162,13 @@
         font-size: 48px;
         text-align: center;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         font-weight: normal;
       }
 
       /* CSS chung cho các nhóm input */
       .form-group {
-        margin-bottom: 18px;
+        margin-bottom: 25px;
       }
 
       /* CSS cho nhóm input "Gửi từ" nằm trên cùng một dòng */
@@ -211,33 +211,27 @@
         outline: none;
       }
 
-      /* CSS cho ô nhập liệu nhiều dòng (textarea) - ĐÃ ĐIỀU CHỈNH */
+      /* CSS cho ô nhập liệu nhiều dòng (textarea) */
       .form-group .multi-line-textarea {
         width: 100%;
         border: none;
         background-color: transparent;
-        padding-left: 5px;
         font-size: 16px;
         font-family: Mali;
         color: #e5627f;
-
-        /* Điều chỉnh khoảng cách dòng */
-        line-height: 24px; /* GIẢM: Chiều cao cho mỗi dòng văn bản */
-        height: 120px; /* GIẢM: Chiều cao tổng (24px * 5 dòng) */
-
+        line-height: 24px;
+        height: 120px;
         resize: none;
         padding: 0;
         margin: 0;
-
-        /* Điều chỉnh các đường kẻ để khớp với line-height mới */
         background-image: repeating-linear-gradient(
           to bottom,
           transparent,
           transparent 23px,
-          /* Khoảng trống */ #333 23px,
-          /* Bắt đầu đường kẻ */ #333 24px /* Kết thúc đường kẻ */
+          #333 23px,
+          #333 24px
         );
-        background-size: 100% 24px; /* GIẢM: Khoảng cách giữa các đường kẻ */
+        background-size: 100% 24px;
       }
 
       /* Loại bỏ đường viền khi focus vào textarea */
@@ -245,7 +239,7 @@
         outline: none;
       }
 
-      /* -- PHẦN MỚI: CSS cho nút Gửi -- */
+      /* CSS cho nút Gửi */
       .submit-container {
         text-align: center; /* Căn giữa nút */
         margin-top: 30px;
@@ -265,6 +259,16 @@
 
       .submit-btn:hover {
         background-color: #d4516e; /* Màu đậm hơn khi di chuột qua */
+      }
+
+      /* -- PHẦN MỚI: CSS cho thông báo -- */
+      #notification {
+        text-align: center;
+        margin-top: 15px;
+        font-family: "Mali", cursive;
+        color: #28a745; /* Màu xanh lá cây cho thành công */
+        font-weight: bold;
+        min-height: 20px;
       }
       @media (max-width: 420px) {
         .body-content p {
@@ -313,6 +317,7 @@
       <!-- Bắt đầu Form -->
       <div class="content-form">
         <div class="wish-card">
+          <form id="wish-form">
           <form>
             <h1>Lời chúc phúc</h1>
             <div class="form-group form-group-inline">
@@ -321,7 +326,7 @@
                 type="text"
                 id="sender"
                 name="sender"
-                class="single-line-input"
+                class="single-line-input" required
               />
             </div>
 
@@ -330,7 +335,7 @@
               <textarea
                 id="message"
                 name="message"
-                class="multi-line-textarea"
+                class="multi-line-textarea" required
               ></textarea>
             </div>
 
@@ -338,9 +343,10 @@
             <div class="submit-container">
               <button type="submit" class="submit-btn">Gửi lời chúc</button>
             </div>
+             <!-- THÊM MỚI: Vùng để hiển thị thông báo -->
+        <div id="notification"></div>
           </form>
-        </div>
-      </div>
+              </div>
       <!-- Kết thúc Form -->
     </div>
 
@@ -371,6 +377,45 @@
 
         elements.forEach((el) => observer.observe(el));
       };
+      // 1. Tìm các phần tử HTML cần tương tác
+      const wishForm = document.getElementById("wish-form");
+      const notificationDiv = document.getElementById("notification");
+
+      // 2. "Lắng nghe" sự kiện khi người dùng nhấn nút "Gửi"
+      wishForm.addEventListener("submit", function (event) {
+        // 2.1. Ngăn chặn hành vi mặc định của form (tải lại trang)
+        event.preventDefault();
+
+        // 2.2. Lấy dữ liệu từ các ô input
+        const sender = document.getElementById("sender").value;
+        const message = document.getElementById("message").value;
+
+        // 2.3. Tạo một đối tượng (object) để chứa lời chúc
+        const newWish = {
+          sender: sender,
+          message: message,
+          timestamp: new Date().toISOString(), // Thêm thời gian gửi cho chuyên nghiệp
+        };
+
+        // 2.4. Lưu dữ liệu vào localStorage
+        // Lấy danh sách lời chúc cũ (nếu có), hoặc tạo một mảng rỗng
+        const wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+        // Thêm lời chúc mới vào danh sách
+        wishes.push(newWish);
+        // Lưu lại danh sách đã cập nhật vào localStorage
+        localStorage.setItem("wishes", JSON.stringify(wishes));
+
+        // 2.5. Reset (xóa trắng) các ô input trong form
+        wishForm.reset();
+
+        // 2.6. Hiển thị thông báo thành công
+        notificationDiv.textContent = "Lời chúc đã được ghi nhận!";
+
+        // 2.7. (Tùy chọn) Xóa thông báo sau vài giây
+        setTimeout(() => {
+          notificationDiv.textContent = "";
+        }, 4000); // 4000 mili-giây = 4 giây
+      });
     </script>
   </body>
 </html>
